@@ -21,13 +21,13 @@ enum CMD//这里定义了后面后可以使用
 struct DataHeader
 {
 
-    DataHeader()
-    {
-        dataLength = sizeof(DataHeader);
-        cmd = CMD_ERROR; //默认值
-    }
+    //DataHeader()
+    //{
+    //    dataLength = sizeof(DataHeader);
+    //    cmd = CMD_ERROR; //默认值
+    //}
     short dataLength; //数据的长度
-    short cmd; //每次需要执行的任务
+   short cmd; //每次需要执行的任务
 };
 
 struct Login : public DataHeader
@@ -56,11 +56,11 @@ struct LoginResult : public DataHeader
     char data[92];
 };
 
-struct LoginOut : public DataHeader
+struct Logout : public DataHeader
 {
-    LoginOut()
+    Logout()
     {
-        dataLength = sizeof(LoginOut);
+        dataLength = sizeof(Logout);
         cmd = CMD_LOGOUT;
     }
     char userName[32];
